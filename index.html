@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlasmoFP Explorer — static MVP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">Pf</span>
+      <div class="brand-text">
+        <h1>PlasmoFP <span class="accent">Explorer</span></h1>
+        <p class="tagline">Gene Ontology predictions across 19 <em>Plasmodium</em> species — static MVP, no server</p>
+      </div>
+    </div>
+    <div id="species-strip" class="species-strip" aria-label="Species included in this dataset"></div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <section class="panel" aria-labelledby="gene-search-heading">
+    <h2 id="gene-search-heading">Search genes</h2>
+    <p class="panel-hint">By gene ID or protein product description</p>
+    <input id="gene-search" class="search-input" type="text" placeholder="e.g. PF3D7, kinase, PADL01_0100300" autocomplete="off">
+    <div id="gene-results" class="results-list" role="listbox"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="go-search-heading">
+    <h2 id="go-search-heading">Search GO terms</h2>
+    <p class="panel-hint">By GO ID or term name</p>
+    <input id="go-search" class="search-input" type="text" placeholder="e.g. GO:0005488, kinase activity, membrane" autocomplete="off">
+    <div id="go-results" class="results-list" role="listbox"></div>
+  </section>
+
+</main>
+
+<section id="detail" class="detail" hidden></section>
+
+<footer class="footer">
+  <p>Demonstration build. Data sharded from PlasmoFP Explorer's precomputed prediction indices — every lookup below is a single small file fetch, timed live.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

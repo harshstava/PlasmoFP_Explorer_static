@@ -1,0 +1,1 @@
+{"original_annotations":{"BP":[{"id":"GO:0070286","name":"axonemal dynein complex assembly"}],"CC":[{"id":"GO:0005858","name":"axonemal dynein complex"}]},"pfp_predictions":{"MF":{"0.1":[{"id":"GO:0005488","name":"binding","score":0.483365}],"0.2":[{"id":"GO:0005488","name":"binding","score":0.483365}],"0.3":[{"id":"GO:0005488","name":"binding","score":0.483365}]}}}

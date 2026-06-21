@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005509","name":"calcium ion binding"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0007165","name":"signal transduction","score":0.144675}]},"CC":{"0.3":[{"id":"GO:0005737","name":"cytoplasm","score":0.258789},{"id":"GO:0043231","name":"intracellular membrane-bounded organelle","score":0.194224}]}}}

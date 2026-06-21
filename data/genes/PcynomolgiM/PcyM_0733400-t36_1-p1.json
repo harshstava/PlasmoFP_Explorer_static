@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0003779","name":"actin binding"}],"BP":[{"id":"GO:0030036","name":"actin cytoskeleton organization"}]},"pfp_predictions":{"CC":{"0.1":[{"id":"GO:0005737","name":"cytoplasm","score":0.735867}],"0.2":[{"id":"GO:0005737","name":"cytoplasm","score":0.735867}],"0.3":[{"id":"GO:0005737","name":"cytoplasm","score":0.735867}]}}}

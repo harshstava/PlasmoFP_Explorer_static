@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0003729","name":"mRNA binding"}],"CC":[{"id":"GO:0005739","name":"mitochondrion"}]},"pfp_predictions":{"BP":{"0.2":[{"id":"GO:0006457","name":"protein folding","score":0.028991}],"0.3":[{"id":"GO:0006457","name":"protein folding","score":0.028991}]}}}

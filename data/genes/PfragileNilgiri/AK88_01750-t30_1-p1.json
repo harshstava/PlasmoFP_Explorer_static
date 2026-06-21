@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0003951","name":"NAD+ kinase activity"}],"BP":[{"id":"GO:0019674","name":"NAD metabolic process"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0043231","name":"intracellular membrane-bounded organelle","score":0.501989}],"0.3":[{"id":"GO:0043231","name":"intracellular membrane-bounded organelle","score":0.501989}]}}}

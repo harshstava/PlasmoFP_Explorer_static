@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding"}],"CC":[{"id":"GO:0070258","name":"inner membrane pellicle complex"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0010556","name":"regulation of macromolecule biosynthetic process","score":0.069771},{"id":"GO:2001141","name":"regulation of RNA biosynthetic process","score":0.042762}]}}}

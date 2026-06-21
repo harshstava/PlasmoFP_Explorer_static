@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005125","name":"cytokine activity"}],"BP":[{"id":"GO:0042783","name":"evasion of host immune response"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0005615","name":"extracellular space","score":0.25665}],"0.3":[{"id":"GO:0005615","name":"extracellular space","score":0.25665}]}}}

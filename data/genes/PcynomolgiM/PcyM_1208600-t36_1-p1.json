@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding"}],"BP":[{"id":"GO:0044458","name":"motile cilium assembly"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:1990904","name":"ribonucleoprotein complex","score":0.072474}],"0.3":[{"id":"GO:1990904","name":"ribonucleoprotein complex","score":0.072474}]}}}

@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0001671","name":"ATPase activator activity"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0016020","name":"membrane","score":0.19894}],"0.3":[{"id":"GO:0043231","name":"intracellular membrane-bounded organelle","score":0.312607},{"id":"GO:0016020","name":"membrane","score":0.19894}]}}}

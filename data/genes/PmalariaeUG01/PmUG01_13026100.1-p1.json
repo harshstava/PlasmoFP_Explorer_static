@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005509","name":"calcium ion binding"}],"BP":[{"id":"GO:0006508","name":"proteolysis"},{"id":"GO:0055074","name":"calcium ion homeostasis"},{"id":"GO:0019722","name":"calcium-mediated signaling"}]},"pfp_predictions":{"CC":{"0.3":[{"id":"GO:0016020","name":"membrane","score":0.075861}]}}}

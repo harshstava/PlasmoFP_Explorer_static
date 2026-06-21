@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0008233","name":"peptidase activity"}],"BP":[{"id":"GO:0030163","name":"protein catabolic process"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0016020","name":"membrane","score":0.196077}],"0.3":[{"id":"GO:0016020","name":"membrane","score":0.196077},{"id":"GO:1990904","name":"ribonucleoprotein complex","score":0.032152}]}}}

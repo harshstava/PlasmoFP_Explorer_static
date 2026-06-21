@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005524","name":"ATP binding"},{"id":"GO:0019789","name":"SUMO transferase activity"}],"BP":[{"id":"GO:0016925","name":"protein sumoylation"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0043231","name":"intracellular membrane-bounded organelle","score":0.517833}],"0.3":[{"id":"GO:0005634","name":"nucleus","score":0.178649}]}}}

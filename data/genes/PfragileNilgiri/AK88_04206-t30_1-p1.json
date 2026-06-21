@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0046872","name":"metal ion binding"}],"BP":[{"id":"GO:0008033","name":"tRNA processing"}]},"pfp_predictions":{"CC":{"0.3":[{"id":"GO:0005737","name":"cytoplasm","score":0.376999},{"id":"GO:0043226","name":"organelle","score":0.149837}]}}}

@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding"}],"CC":[{"id":"GO:0048188","name":"Set1C/COMPASS complex"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0006396","name":"RNA processing","score":0.101073},{"id":"GO:0016070","name":"RNA metabolic process","score":0.074572}]}}}

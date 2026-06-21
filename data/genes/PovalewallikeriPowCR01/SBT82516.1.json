@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0008233","name":"peptidase activity"}],"BP":[{"id":"GO:0006508","name":"proteolysis"}]},"pfp_predictions":{"CC":{"0.1":[{"id":"GO:0016020","name":"membrane","score":0.447901}],"0.2":[{"id":"GO:0016020","name":"membrane","score":0.447901}],"0.3":[{"id":"GO:0016020","name":"membrane","score":0.447901}]}}}

@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005543","name":"phospholipid binding"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0016020","name":"membrane","score":0.128734}],"0.3":[{"id":"GO:0043231","name":"intracellular membrane-bounded organelle","score":0.168181},{"id":"GO:0016020","name":"membrane","score":0.128734}]}}}

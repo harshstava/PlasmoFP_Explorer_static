@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005524","name":"ATP binding"}]},"pfp_predictions":{"BP":{"0.2":[{"id":"GO:0006139","name":"nucleobase-containing compound metabolic process","score":0.110328}]},"CC":{"0.3":[{"id":"GO:0016020","name":"membrane","score":0.0657}]}}}

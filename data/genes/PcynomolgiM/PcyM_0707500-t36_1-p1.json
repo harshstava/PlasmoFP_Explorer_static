@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0003677","name":"DNA binding"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0043231","name":"intracellular membrane-bounded organelle","score":0.513237}],"0.3":[{"id":"GO:0005634","name":"nucleus","score":0.128722},{"id":"GO:0032991","name":"protein-containing complex","score":0.061647}]}}}

@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0003676","name":"nucleic acid binding"},{"id":"GO:0003723","name":"RNA binding"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0016070","name":"RNA metabolic process","score":0.065517}]},"CC":{"0.3":[{"id":"GO:0005634","name":"nucleus","score":0.269844},{"id":"GO:0032991","name":"protein-containing complex","score":0.07539}]}}}

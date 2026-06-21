@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0000049","name":"tRNA binding"}],"BP":[{"id":"GO:0002098","name":"tRNA wobble uridine modification"},{"id":"GO:0034227","name":"tRNA thio-modification"}]},"pfp_predictions":{"CC":{"0.3":[{"id":"GO:0005737","name":"cytoplasm","score":0.399279}]}}}

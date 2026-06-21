@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0004053","name":"arginase activity"},{"id":"GO:0046872","name":"metal ion binding"}],"BP":[{"id":"GO:0006525","name":"arginine metabolic process"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0005829","name":"cytosol","score":0.212601}],"0.3":[{"id":"GO:0005829","name":"cytosol","score":0.212601}]}}}

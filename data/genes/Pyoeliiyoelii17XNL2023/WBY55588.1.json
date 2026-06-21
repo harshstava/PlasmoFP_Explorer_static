@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0051537","name":"2 iron, 2 sulfur cluster binding"}],"CC":[{"id":"GO:0043231","name":"intracellular membrane-bounded organelle"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0016070","name":"RNA metabolic process","score":0.076754},{"id":"GO:0006396","name":"RNA processing","score":0.070977}]}}}

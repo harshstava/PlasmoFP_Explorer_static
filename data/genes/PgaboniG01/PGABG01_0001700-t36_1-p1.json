@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding"}]},"pfp_predictions":{"CC":{"0.3":[{"id":"GO:0032991","name":"protein-containing complex","score":0.156754},{"id":"GO:0043226","name":"organelle","score":0.125784},{"id":"GO:0016020","name":"membrane","score":0.055916}]}}}

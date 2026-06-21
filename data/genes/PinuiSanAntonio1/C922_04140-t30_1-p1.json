@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0010556","name":"regulation of macromolecule biosynthetic process","score":0.054424},{"id":"GO:0016070","name":"RNA metabolic process","score":0.041386}]},"CC":{"0.3":[{"id":"GO:0005634","name":"nucleus","score":0.24088}]}}}

@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0046872","name":"metal ion binding"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0010556","name":"regulation of macromolecule biosynthetic process","score":0.093284}]},"CC":{"0.3":[{"id":"GO:0032991","name":"protein-containing complex","score":0.086857},{"id":"GO:0016020","name":"membrane","score":0.063186}]}}}

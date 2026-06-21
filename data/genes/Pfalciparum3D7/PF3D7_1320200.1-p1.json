@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005096","name":"GTPase activator activity"}],"BP":[{"id":"GO:0006886","name":"intracellular protein transport"},{"id":"GO:0090630","name":"activation of GTPase activity"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0016020","name":"membrane","score":0.166105}],"0.3":[{"id":"GO:0016020","name":"membrane","score":0.166105}]}}}

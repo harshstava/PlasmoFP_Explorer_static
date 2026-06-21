@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0008270","name":"zinc ion binding"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0006139","name":"nucleobase-containing compound metabolic process","score":0.036171}]},"CC":{"0.3":[{"id":"GO:0005737","name":"cytoplasm","score":0.290173},{"id":"GO:0043226","name":"organelle","score":0.115716}]}}}

@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0003743","name":"translation initiation factor activity"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0009058","name":"biosynthetic process","score":0.089431}]},"CC":{"0.3":[{"id":"GO:0016020","name":"membrane","score":0.096802}]}}}

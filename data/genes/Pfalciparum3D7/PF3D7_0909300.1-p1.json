@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0003677","name":"DNA binding"}],"CC":[{"id":"GO:0005634","name":"nucleus"},{"id":"GO:0005829","name":"cytosol"},{"id":"GO:0005829","name":"cytosol"}]},"pfp_predictions":{"BP":{"0.2":[{"id":"GO:0016070","name":"RNA metabolic process","score":0.281736}],"0.3":[{"id":"GO:0016070","name":"RNA metabolic process","score":0.281736}]}}}

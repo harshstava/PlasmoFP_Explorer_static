@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0016274","name":"protein-arginine N-methyltransferase activity"}],"BP":[{"id":"GO:0018216","name":"peptidyl-arginine methylation"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0005634","name":"nucleus","score":0.262103}],"0.3":[{"id":"GO:0005634","name":"nucleus","score":0.262103}]}}}

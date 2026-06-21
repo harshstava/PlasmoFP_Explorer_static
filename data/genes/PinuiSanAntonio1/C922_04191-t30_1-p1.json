@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0008168","name":"methyltransferase activity"}],"BP":[{"id":"GO:0032259","name":"methylation"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0005634","name":"nucleus","score":0.282661}],"0.3":[{"id":"GO:0005634","name":"nucleus","score":0.282661},{"id":"GO:0032991","name":"protein-containing complex","score":0.126252}]}}}

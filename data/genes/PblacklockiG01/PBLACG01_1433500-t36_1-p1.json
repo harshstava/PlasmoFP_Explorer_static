@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0016763","name":"pentosyltransferase activity"}],"BP":[{"id":"GO:0006400","name":"tRNA modification"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0005737","name":"cytoplasm","score":0.564612}],"0.3":[{"id":"GO:0005737","name":"cytoplasm","score":0.564612}]}}}

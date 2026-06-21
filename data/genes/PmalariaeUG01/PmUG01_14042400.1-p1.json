@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0008446","name":"GDP-mannose 4,6-dehydratase activity"}],"BP":[{"id":"GO:0019673","name":"GDP-mannose metabolic process"}]},"pfp_predictions":{"CC":{"0.1":[{"id":"GO:0016020","name":"membrane","score":0.414483}],"0.2":[{"id":"GO:0016020","name":"membrane","score":0.414483}],"0.3":[{"id":"GO:0016020","name":"membrane","score":0.414483}]}}}

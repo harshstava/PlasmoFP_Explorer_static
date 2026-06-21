@@ -1,0 +1,1 @@
+{"original_annotations":{},"pfp_predictions":{"MF":{"0.1":[{"id":"GO:0005488","name":"binding","score":0.296669}],"0.2":[{"id":"GO:0005488","name":"binding","score":0.296669},{"id":"GO:0005515","name":"protein binding","score":0.24134}],"0.3":[{"id":"GO:0005488","name":"binding","score":0.296669},{"id":"GO:0005515","name":"protein binding","score":0.24134}]}}}

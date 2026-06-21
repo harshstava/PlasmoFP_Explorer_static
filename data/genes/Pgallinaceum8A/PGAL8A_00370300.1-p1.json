@@ -1,0 +1,1 @@
+{"original_annotations":{"CC":[{"id":"GO:0005739","name":"mitochondrion"}]},"pfp_predictions":{"MF":{"0.2":[{"id":"GO:0005198","name":"structural molecule activity","score":0.0302}],"0.3":[{"id":"GO:0005198","name":"structural molecule activity","score":0.0302}]},"BP":{"0.3":[{"id":"GO:0022607","name":"cellular component assembly","score":0.131559}]}}}

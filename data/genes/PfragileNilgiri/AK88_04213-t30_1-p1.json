@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0003677","name":"DNA binding"}]},"pfp_predictions":{"BP":{"0.2":[{"id":"GO:0006508","name":"proteolysis","score":0.076956}],"0.3":[{"id":"GO:0006508","name":"proteolysis","score":0.076956}]},"CC":{"0.3":[{"id":"GO:0005737","name":"cytoplasm","score":0.460533},{"id":"GO:0016020","name":"membrane","score":0.053474}]}}}

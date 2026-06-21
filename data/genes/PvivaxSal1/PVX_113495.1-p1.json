@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0003676","name":"nucleic acid binding"},{"id":"GO:0003723","name":"RNA binding"},{"id":"GO:0008187","name":"poly-pyrimidine tract binding"}],"BP":[{"id":"GO:0008380","name":"RNA splicing"}]},"pfp_predictions":{"CC":{"0.3":[{"id":"GO:0005737","name":"cytoplasm","score":0.265225},{"id":"GO:0016020","name":"membrane","score":0.04057}]}}}

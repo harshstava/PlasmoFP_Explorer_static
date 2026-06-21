@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0003713","name":"transcription coactivator activity"},{"id":"GO:0003677","name":"DNA binding"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0009058","name":"biosynthetic process","score":0.09554}]},"CC":{"0.3":[{"id":"GO:0043231","name":"intracellular membrane-bounded organelle","score":0.16825}]}}}

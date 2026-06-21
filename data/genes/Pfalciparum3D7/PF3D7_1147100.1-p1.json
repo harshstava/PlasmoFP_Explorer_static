@@ -1,0 +1,1 @@
+{"original_annotations":{},"pfp_predictions":{"MF":{"0.2":[{"id":"GO:0005488","name":"binding","score":0.032298},{"id":"GO:0003824","name":"catalytic activity","score":0.022184}],"0.3":[{"id":"GO:0005488","name":"binding","score":0.032298},{"id":"GO:0003824","name":"catalytic activity","score":0.022184}]},"CC":{"0.3":[{"id":"GO:0016020","name":"membrane","score":0.098947}]}}}

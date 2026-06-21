@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding"}]},"pfp_predictions":{"CC":{"0.3":[{"id":"GO:0032991","name":"protein-containing complex","score":0.106523},{"id":"GO:0031974","name":"membrane-enclosed lumen","score":0.01031},{"id":"GO:0043233","name":"organelle lumen","score":0.010084}]}}}

@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0004484","name":"mRNA guanylyltransferase activity"}],"BP":[{"id":"GO:0006370","name":"7-methylguanosine mRNA capping"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0005634","name":"nucleus","score":0.470464}],"0.3":[{"id":"GO:0005634","name":"nucleus","score":0.470464}]}}}

@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding"}],"CC":[{"id":"GO:0020011","name":"apicoplast"}]},"pfp_predictions":{"BP":{"0.2":[{"id":"GO:0006508","name":"proteolysis","score":0.055065}],"0.3":[{"id":"GO:0006508","name":"proteolysis","score":0.055065},{"id":"GO:0006457","name":"protein folding","score":0.013101}]}}}

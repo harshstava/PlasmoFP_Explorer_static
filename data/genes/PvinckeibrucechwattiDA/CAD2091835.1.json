@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0030234","name":"enzyme regulator activity"}],"CC":[{"id":"GO:0000502","name":"proteasome complex"}]},"pfp_predictions":{"BP":{"0.2":[{"id":"GO:0006508","name":"proteolysis","score":0.094187}],"0.3":[{"id":"GO:0051603","name":"proteolysis involved in protein catabolic process","score":0.062061}]}}}

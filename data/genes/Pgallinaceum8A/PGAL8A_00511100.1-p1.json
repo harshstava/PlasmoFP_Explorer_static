@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding"}]},"pfp_predictions":{"CC":{"0.2":[{"id":"GO:0043231","name":"intracellular membrane-bounded organelle","score":0.509032}],"0.3":[{"id":"GO:0005634","name":"nucleus","score":0.130381},{"id":"GO:0016020","name":"membrane","score":0.090628}]}}}

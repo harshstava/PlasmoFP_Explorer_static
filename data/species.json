@@ -1,0 +1,97 @@
+[
+  {
+    "code": "PmalariaeUG01",
+    "display_name": "P. malariae UG01",
+    "gene_count": 5619
+  },
+  {
+    "code": "PinuiSanAntonio1",
+    "display_name": "P. inui San Antonio 1",
+    "gene_count": 5543
+  },
+  {
+    "code": "PovalewallikeriPowCR01",
+    "display_name": "P. ovale wallikeri PowCR01",
+    "gene_count": 5518
+  },
+  {
+    "code": "PfragileNilgiri",
+    "display_name": "P. fragile Nilgiri",
+    "gene_count": 5370
+  },
+  {
+    "code": "PreichenowiCDC",
+    "display_name": "P. reichenowi CDC",
+    "gene_count": 5316
+  },
+  {
+    "code": "Pfalciparum3D7",
+    "display_name": "P. falciparum 3D7",
+    "gene_count": 5219
+  },
+  {
+    "code": "PcoatneyiHackeri",
+    "display_name": "P. coatneyi Hackeri",
+    "gene_count": 5186
+  },
+  {
+    "code": "PvivaxSal1",
+    "display_name": "P. vivax Sal1",
+    "gene_count": 5078
+  },
+  {
+    "code": "Pyoeliiyoelii17XNL2023",
+    "display_name": "P. yoelii yoelii 17XNL",
+    "gene_count": 5056
+  },
+  {
+    "code": "PovalecurtisiGH01",
+    "display_name": "P. ovale curtisi GH01",
+    "gene_count": 5046
+  },
+  {
+    "code": "PadleriG01",
+    "display_name": "P. adleri G01",
+    "gene_count": 4995
+  },
+  {
+    "code": "Pgallinaceum8A",
+    "display_name": "P. gallinaceum 8A",
+    "gene_count": 4915
+  },
+  {
+    "code": "PknowlesiH",
+    "display_name": "P. knowlesi H",
+    "gene_count": 4826
+  },
+  {
+    "code": "PblacklockiG01",
+    "display_name": "P. blacklocki G01",
+    "gene_count": 4821
+  },
+  {
+    "code": "Pchabaudichabaudi",
+    "display_name": "P. chabaudi chabaudi",
+    "gene_count": 4821
+  },
+  {
+    "code": "PgaboniG01",
+    "display_name": "P. gaboni G01",
+    "gene_count": 4810
+  },
+  {
+    "code": "PvinckeibrucechwattiDA",
+    "display_name": "P. vinckei brucechwatti DA",
+    "gene_count": 4751
+  },
+  {
+    "code": "PbergheiANKA",
+    "display_name": "P. berghei ANKA",
+    "gene_count": 4714
+  },
+  {
+    "code": "PcynomolgiM",
+    "display_name": "P. cynomolgi M",
+    "gene_count": 4681
+  }
+]

@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0016740","name":"transferase activity"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0016070","name":"RNA metabolic process","score":0.041216},{"id":"GO:0031123","name":"RNA 3'-end processing","score":0.031874}]},"CC":{"0.3":[{"id":"GO:0016020","name":"membrane","score":0.095399}]}}}

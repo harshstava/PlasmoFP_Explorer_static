@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0043565","name":"sequence-specific DNA binding"}],"CC":[{"id":"GO:0005739","name":"mitochondrion"}]},"pfp_predictions":{"BP":{"0.05":[{"id":"GO:0009058","name":"biosynthetic process","score":0.681236}],"0.2":[{"id":"GO:0006412","name":"translation","score":0.028744}],"0.3":[{"id":"GO:0006412","name":"translation","score":0.028744}]}}}

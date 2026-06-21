@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0016301","name":"kinase activity"}],"CC":[{"id":"GO:0005634","name":"nucleus"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0010556","name":"regulation of macromolecule biosynthetic process","score":0.051815},{"id":"GO:0016070","name":"RNA metabolic process","score":0.046528}]}}}

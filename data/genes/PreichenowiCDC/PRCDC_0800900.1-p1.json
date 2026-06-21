@@ -1,0 +1,1 @@
+{"original_annotations":{"MF":[{"id":"GO:0008201","name":"heparin binding"},{"id":"GO:0050693","name":"LBD domain binding"}],"CC":[{"id":"GO:0034494","name":"microneme lumen"}]},"pfp_predictions":{"BP":{"0.2":[{"id":"GO:0006508","name":"proteolysis","score":0.171426}],"0.3":[{"id":"GO:0006508","name":"proteolysis","score":0.171426}]}}}
