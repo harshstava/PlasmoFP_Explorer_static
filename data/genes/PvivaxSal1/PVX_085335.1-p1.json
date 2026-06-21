@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0019904","name":"protein domain specific binding"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0006457","name":"protein folding","score":0.01187}]}}}
+{"original_annotations":{"MF":[{"id":"GO:0019904","name":"protein domain specific binding","cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"}]},"pfp_predictions":{"BP":{"0.3":[{"id":"GO:0006457","name":"protein folding","score":0.01187,"cluster_id":"5","cluster_name":"Cellular Organization, Assembly & Stress Response"}]}}}

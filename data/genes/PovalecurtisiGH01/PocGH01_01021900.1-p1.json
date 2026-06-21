@@ -1,1 +1,1 @@
-{"original_annotations":{"CC":[{"id":"GO:0031410","name":"cytoplasmic vesicle"},{"id":"GO:0071944","name":"cell periphery"}]},"pfp_predictions":{}}
+{"original_annotations":{"CC":[{"id":"GO:0031410","name":"cytoplasmic vesicle","cluster_id":"1","cluster_name":"Membrane & Organelle"},{"id":"GO:0071944","name":"cell periphery","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

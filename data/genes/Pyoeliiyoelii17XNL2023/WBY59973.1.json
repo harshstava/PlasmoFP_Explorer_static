@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0003690","name":"double-stranded DNA binding"}],"BP":[{"id":"GO:0007131","name":"reciprocal meiotic recombination"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0003690","name":"double-stranded DNA binding","cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"}],"BP":[{"id":"GO:0007131","name":"reciprocal meiotic recombination","cluster_id":"6","cluster_name":"RNA Processing & DNA Repair"}]},"pfp_predictions":{}}

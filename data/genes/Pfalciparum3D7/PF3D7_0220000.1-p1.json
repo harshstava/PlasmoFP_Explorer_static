@@ -1,1 +1,1 @@
-{"original_annotations":{"CC":[{"id":"GO:0020026","name":"merozoite dense granule"},{"id":"GO:0044228","name":"host cell surface"}]},"pfp_predictions":{}}
+{"original_annotations":{"CC":[{"id":"GO:0020026","name":"merozoite dense granule","cluster_id":"1","cluster_name":"Membrane & Organelle"},{"id":"GO:0044228","name":"host cell surface","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0003824","name":"catalytic activity"},{"id":"GO:0016791","name":"phosphatase activity"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0003824","name":"catalytic activity","cluster_id":"5","cluster_name":"Oxidoreductase, Synthase & Ligase Activity"},{"id":"GO:0016791","name":"phosphatase activity","cluster_id":"3","cluster_name":"Hydrolases, Phosphatases & Nucleic-Acid-Acting Enzymes"}]},"pfp_predictions":{}}

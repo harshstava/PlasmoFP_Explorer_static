@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding"}],"BP":[{"id":"GO:0006897","name":"endocytosis"}],"CC":[{"id":"GO:0005829","name":"cytosol"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding","cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"}],"BP":[{"id":"GO:0006897","name":"endocytosis","cluster_id":"2","cluster_name":"Protein Transport & Localization"}],"CC":[{"id":"GO:0005829","name":"cytosol","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

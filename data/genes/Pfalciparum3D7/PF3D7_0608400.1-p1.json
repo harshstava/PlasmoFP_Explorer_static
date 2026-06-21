@@ -1,1 +1,1 @@
-{"original_annotations":{"CC":[{"id":"GO:0005739","name":"mitochondrion"},{"id":"GO:0045277","name":"respiratory chain complex IV"},{"id":"GO:0016021","name":"membrane"}]},"pfp_predictions":{}}
+{"original_annotations":{"CC":[{"id":"GO:0005739","name":"mitochondrion","cluster_id":"1","cluster_name":"Membrane & Organelle"},{"id":"GO:0045277","name":"respiratory chain complex IV","cluster_id":"0","cluster_name":"Catalytic & Enzymatic Complexes"},{"id":"GO:0016021","name":"membrane","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

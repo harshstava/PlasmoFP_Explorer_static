@@ -1,1 +1,1 @@
-{"original_annotations":{"CC":[{"id":"GO:0016020","name":"membrane"},{"id":"GO:0030054","name":"cell junction"},{"id":"GO:0031410","name":"cytoplasmic vesicle"}]},"pfp_predictions":{}}
+{"original_annotations":{"CC":[{"id":"GO:0016020","name":"membrane","cluster_id":"1","cluster_name":"Membrane & Organelle"},{"id":"GO:0030054","name":"cell junction","cluster_id":"1","cluster_name":"Membrane & Organelle"},{"id":"GO:0031410","name":"cytoplasmic vesicle","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

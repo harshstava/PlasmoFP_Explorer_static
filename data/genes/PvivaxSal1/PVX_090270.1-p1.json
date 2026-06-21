@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0018149","name":"peptide cross-linking"}],"CC":[{"id":"GO:0005737","name":"cytoplasm"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0018149","name":"peptide cross-linking","cluster_id":"4","cluster_name":"Protein & tRNA Post-translational Modification"}],"CC":[{"id":"GO:0005737","name":"cytoplasm","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0009410","name":"response to xenobiotic stimulus"},{"id":"GO:0009657","name":"plastid organization"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0009410","name":"response to xenobiotic stimulus","cluster_id":"5","cluster_name":"Cellular Organization, Assembly & Stress Response"},{"id":"GO:0009657","name":"plastid organization","cluster_id":"5","cluster_name":"Cellular Organization, Assembly & Stress Response"}]},"pfp_predictions":{}}

@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0006367","name":"transcription initiation at RNA polymerase II promoter"}],"CC":[{"id":"GO:0005672","name":"transcription factor TFIIA complex"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0006367","name":"transcription initiation at RNA polymerase II promoter","cluster_id":"1","cluster_name":"Biosynthesis & Macromolecule Synthesis"}],"CC":[{"id":"GO:0005672","name":"transcription factor TFIIA complex","cluster_id":"2","cluster_name":"Gene-Expression Complexes"}]},"pfp_predictions":{}}

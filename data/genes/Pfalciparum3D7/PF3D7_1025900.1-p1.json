@@ -1,1 +1,1 @@
-{"original_annotations":{"CC":[{"id":"GO:0005634","name":"nucleus"},{"id":"GO:0005829","name":"cytosol"}]},"pfp_predictions":{}}
+{"original_annotations":{"CC":[{"id":"GO:0005634","name":"nucleus","cluster_id":"1","cluster_name":"Membrane & Organelle"},{"id":"GO:0005829","name":"cytosol","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

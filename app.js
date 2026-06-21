@@ -49,15 +49,7 @@ async function boot() {
     `${state.species.length} species (${speciesRes.ms.toFixed(0)}ms)`
   );
 
-  renderSpeciesStrip();
   wireSearch();
-}
-
-function renderSpeciesStrip() {
-  const strip = document.getElementById("species-strip");
-  strip.innerHTML = state.species
-    .map(s => `<span class="species-chip"><b>${s.display_name}</b> · ${s.gene_count.toLocaleString()} genes</span>`)
-    .join("");
 }
 
 // ---------- Gene search ----------
@@ -97,10 +89,27 @@ function renderGeneResults(results) {
   });
 }
 
-async function openGene(geneId, species) {
+async function openGene(geneId, species, focusGoId) {
   const path = `data/genes/${species}/${safeFilename(geneId)}.json`;
   const { data, ms } = await timedFetchJSON(path);
-  renderGeneDetail(geneId, species, data, ms);
+  renderGeneDetail(geneId, species, data, ms, focusGoId);
+}
+
+// Given a GO id, find the aspect it belongs to and the tightest (smallest)
+// eFDR threshold whose prediction bucket already includes it — so opening a
+// gene from that term's search result shows it without the user having to
+// loosen the threshold themselves.
+function findFdrForGoTerm(pfpPredictions, goId) {
+  if (!goId) return null;
+  for (const aspect in pfpPredictions) {
+    const thresholds = Object.keys(pfpPredictions[aspect]).sort((a, b) => parseFloat(a) - parseFloat(b));
+    for (const fdr of thresholds) {
+      if ((pfpPredictions[aspect][fdr] || []).some(p => p.id === goId)) {
+        return { aspect, fdr };
+      }
+    }
+  }
+  return null;
 }
 
 function scoreBar(score) {
@@ -108,7 +117,70 @@ function scoreBar(score) {
   return `<span class="score-bar" style="width:${pct}px"></span>`;
 }
 
-function renderPredictionTable(predictionsByFdr) {
+// ---------- Functional clustering ----------
+
+// Stable color per cluster ID, independent of aspect — same cluster id always
+// gets the same color so repeat viewing across aspects/genes stays legible.
+const CLUSTER_COLORS = [
+  "#b8841a", "#5b8a72", "#5e7ea8", "#a85e7e", "#8f6512",
+  "#6b9e4f", "#9e5b4f", "#6b6457",
+];
+
+function clusterColor(clusterId) {
+  const n = parseInt(clusterId, 10);
+  return CLUSTER_COLORS[Number.isFinite(n) ? n % CLUSTER_COLORS.length : 0];
+}
+
+function clusterLabel(entry) {
+  if (!entry.cluster_id) return `<span class="muted-note">not clustered</span>`;
+  return `<span class="cluster-tag" style="--cluster-color:${clusterColor(entry.cluster_id)}">${entry.cluster_id}: ${entry.cluster_name}</span>`;
+}
+
+function renderClusterChart(predictions) {
+  const counts = new Map(); // cluster_id -> {name, count}
+  let clustered = 0;
+  for (const p of predictions) {
+    if (!p.cluster_id) continue;
+    clustered++;
+    const c = counts.get(p.cluster_id) || { name: p.cluster_name, count: 0 };
+    c.count++;
+    counts.set(p.cluster_id, c);
+  }
+  if (!clustered) return `<p class="muted-note">No clustered terms available for this threshold.</p>`;
+
+  const r = 38, cx = 44, cy = 44;
+  let angle = 0;
+  const slices = [];
+  for (const [clusterId, { count }] of counts) {
+    const frac = count / clustered;
+    const start = angle;
+    const end = angle + frac * 2 * Math.PI;
+    angle = end;
+    const large = frac > 0.5 ? 1 : 0;
+    const x1 = cx + r * Math.sin(start), y1 = cy - r * Math.cos(start);
+    const x2 = cx + r * Math.sin(end), y2 = cy - r * Math.cos(end);
+    const path = frac >= 0.9999
+      ? `M ${cx} ${cy - r} A ${r} ${r} 0 1 1 ${cx - 0.01} ${cy - r} Z`
+      : `M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2} Z`;
+    slices.push(`<path d="${path}" fill="${clusterColor(clusterId)}"></path>`);
+  }
+
+  const legend = [...counts.entries()]
+    .sort((a, b) => b[1].count - a[1].count)
+    .map(([clusterId, { name, count }]) => `
+      <li><span class="legend-dot" style="background:${clusterColor(clusterId)}"></span>
+        ${clusterId}: ${name} <span class="muted-note">(${count})</span></li>
+    `).join("");
+
+  return `
+    <div class="cluster-chart">
+      <svg viewBox="0 0 88 88" width="88" height="88" role="img" aria-label="Functional cluster distribution">${slices.join("")}</svg>
+      <ul class="cluster-legend">${legend}</ul>
+    </div>
+  `;
+}
+
+function renderPredictionTable(predictionsByFdr, preferredFdr) {
   const thresholds = Object.keys(predictionsByFdr).sort((a, b) => parseFloat(a) - parseFloat(b));
   if (!thresholds.length) return `<p class="muted-note">No PlasmoFP predictions for this aspect.</p>`;
 
@@ -117,16 +189,20 @@ function renderPredictionTable(predictionsByFdr) {
     <tr>
       <td class="go-id">${p.id}</td>
       <td>${p.name}</td>
+      <td>${clusterLabel(p)}</td>
       <td class="score">${scoreBar(p.score)}${p.score.toFixed(4)}</td>
     </tr>
   `).join("");
 
-  const defaultFdr = thresholds.includes("0.05") ? "0.05" : thresholds[0];
+  const defaultFdr = (preferredFdr && thresholds.includes(preferredFdr)) ? preferredFdr :
+    (thresholds.includes("0.05") ? "0.05" : thresholds[0]);
 
   setTimeout(() => {
     const sel = document.getElementById(selectId);
     if (sel) sel.addEventListener("change", () => {
-      sel.closest(".aspect-block").querySelector("tbody").innerHTML = renderRows(sel.value);
+      const block = sel.closest(".aspect-block");
+      block.querySelector("tbody").innerHTML = renderRows(sel.value);
+      block.querySelector(".cluster-chart-wrap").innerHTML = renderClusterChart(predictionsByFdr[sel.value] || []);
     });
   }, 0);
 
@@ -136,24 +212,27 @@ function renderPredictionTable(predictionsByFdr) {
       ${thresholds.map(f => `<option value="${f}" ${f === defaultFdr ? "selected" : ""}>≤ ${f}</option>`).join("")}
     </select>
     <table class="pred-table">
-      <thead><tr><th>GO ID</th><th>Name</th><th>Score</th></tr></thead>
+      <thead><tr><th>GO ID</th><th>Name</th><th>Cluster</th><th>Score</th></tr></thead>
       <tbody>${renderRows(defaultFdr)}</tbody>
     </table>
+    <p class="aspect-title" style="margin-top:0.8rem;">Functional cluster distribution</p>
+    <div class="cluster-chart-wrap">${renderClusterChart(predictionsByFdr[defaultFdr] || [])}</div>
   `;
 }
 
 function renderOriginalAnnotations(annotations) {
   if (!annotations || !annotations.length) return `<p class="muted-note">None on record.</p>`;
   return `<ul style="margin:0;padding-left:1.1rem;font-size:0.85rem;">
-    ${annotations.map(a => `<li><span class="result-id" style="font-size:0.8rem;">${a.id}</span> — ${a.name}</li>`).join("")}
+    ${annotations.map(a => `<li><span class="result-id" style="font-size:0.8rem;">${a.id}</span> — ${a.name} ${clusterLabel(a)}</li>`).join("")}
   </ul>`;
 }
 
-function renderGeneDetail(geneId, species, data, ms) {
+function renderGeneDetail(geneId, species, data, ms, focusGoId) {
   const detail = document.getElementById("detail");
   const aspects = ["MF", "BP", "CC"];
   const aspectLabels = { MF: "Molecular function", BP: "Biological process", CC: "Cellular component" };
   const product = (state.genesIndex[geneId] || [])[1] || "";
+  const focus = findFdrForGoTerm(data.pfp_predictions || {}, focusGoId);
 
   detail.innerHTML = `
     <div class="detail-card">
@@ -169,7 +248,7 @@ function renderGeneDetail(geneId, species, data, ms) {
           <p class="aspect-title">${aspectLabels[asp]} — original annotations</p>
           ${renderOriginalAnnotations((data.original_annotations || {})[asp])}
           <p class="aspect-title" style="margin-top:0.6rem;">${aspectLabels[asp]} — PlasmoFP predictions</p>
-          ${renderPredictionTable((data.pfp_predictions || {})[asp] || {})}
+          ${renderPredictionTable((data.pfp_predictions || {})[asp] || {}, focus && focus.aspect === asp ? focus.fdr : null)}
         </div>
       `).join("")}
     </div>
@@ -248,7 +327,7 @@ function renderGoDetail(data, ms) {
     </div>
   `;
   detail.querySelectorAll("td.go-id[data-gene-id]").forEach(cell => {
-    cell.addEventListener("click", () => openGene(cell.dataset.geneId, cell.dataset.species));
+    cell.addEventListener("click", () => openGene(cell.dataset.geneId, cell.dataset.species, data.id));
   });
   detail.hidden = false;
   detail.scrollIntoView({ behavior: "smooth", block: "start" });

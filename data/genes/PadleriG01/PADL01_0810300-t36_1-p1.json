@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding"}],"CC":[{"id":"GO:0072546","name":"EMC complex"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding","cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"}],"CC":[{"id":"GO:0072546","name":"EMC complex","cluster_id":"3","cluster_name":"Ribosomal, Proteasomal & Vesicle-Coat Complexes"}]},"pfp_predictions":{}}

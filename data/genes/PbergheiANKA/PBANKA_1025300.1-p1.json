@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0019933","name":"cAMP-mediated signaling"}],"CC":[{"id":"GO:0045177","name":"apical part of cell"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0019933","name":"cAMP-mediated signaling","cluster_id":"0","cluster_name":"Regulation of Biological Processes"}],"CC":[{"id":"GO:0045177","name":"apical part of cell","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

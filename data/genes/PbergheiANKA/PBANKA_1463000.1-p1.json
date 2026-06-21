@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0035891","name":"exit from host cell"}],"CC":[{"id":"GO:0044310","name":"osmiophilic body"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0035891","name":"exit from host cell","cluster_id":"5","cluster_name":"Cellular Organization, Assembly & Stress Response"}],"CC":[{"id":"GO:0044310","name":"osmiophilic body","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

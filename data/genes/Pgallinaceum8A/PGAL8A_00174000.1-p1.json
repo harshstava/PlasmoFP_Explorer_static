@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0016491","name":"oxidoreductase activity"}],"BP":[{"id":"GO:0055114","name":"oxidation-reduction process"}],"CC":[{"id":"GO:0020020","name":"food vacuole"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0016491","name":"oxidoreductase activity","cluster_id":"5","cluster_name":"Oxidoreductase, Synthase & Ligase Activity"}],"BP":[{"id":"GO:0055114","name":"oxidation-reduction process"}],"CC":[{"id":"GO:0020020","name":"food vacuole","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

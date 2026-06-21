@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0004596","name":"peptide alpha-N-acetyltransferase activity"}],"CC":[{"id":"GO:0016020","name":"membrane"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0004596","name":"peptide alpha-N-acetyltransferase activity","cluster_id":"1","cluster_name":"Acyl/Acetyl/Methyltransferase Activity"}],"CC":[{"id":"GO:0016020","name":"membrane","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

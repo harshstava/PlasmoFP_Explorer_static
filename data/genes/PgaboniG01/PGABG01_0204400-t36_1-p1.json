@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0007155","name":"cell adhesion"}],"CC":[{"id":"GO:0005886","name":"plasma membrane"},{"id":"GO:0031225","name":"membrane"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0007155","name":"cell adhesion","cluster_id":"5","cluster_name":"Cellular Organization, Assembly & Stress Response"}],"CC":[{"id":"GO:0005886","name":"plasma membrane","cluster_id":"1","cluster_name":"Membrane & Organelle"},{"id":"GO:0031225","name":"membrane"}]},"pfp_predictions":{}}

@@ -1,1 +1,1 @@
-{"original_annotations":{},"pfp_predictions":{"MF":{"0.3":[{"id":"GO:0005488","name":"binding","score":0.014733}]},"CC":{"0.3":[{"id":"GO:0032991","name":"protein-containing complex","score":0.132856}]}}}
+{"original_annotations":{},"pfp_predictions":{"MF":{"0.3":[{"id":"GO:0005488","name":"binding","score":0.014733,"cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"}]},"CC":{"0.3":[{"id":"GO:0032991","name":"protein-containing complex","score":0.132856,"cluster_id":"3","cluster_name":"Ribosomal, Proteasomal & Vesicle-Coat Complexes"}]}}}

@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0003824","name":"catalytic activity"},{"id":"GO:0008923","name":"lysine decarboxylase activity"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0003824","name":"catalytic activity","cluster_id":"5","cluster_name":"Oxidoreductase, Synthase & Ligase Activity"},{"id":"GO:0008923","name":"lysine decarboxylase activity","cluster_id":"5","cluster_name":"Oxidoreductase, Synthase & Ligase Activity"}]},"pfp_predictions":{}}

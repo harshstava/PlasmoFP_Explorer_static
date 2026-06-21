@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0006417","name":"regulation of translation"}],"CC":[{"id":"GO:0005634","name":"nucleus"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0006417","name":"regulation of translation","cluster_id":"0","cluster_name":"Regulation of Biological Processes"}],"CC":[{"id":"GO:0005634","name":"nucleus","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

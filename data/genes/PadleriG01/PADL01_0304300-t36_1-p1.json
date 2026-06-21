@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0006895","name":"Golgi to endosome transport"}],"CC":[{"id":"GO:0005829","name":"cytosol"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0006895","name":"Golgi to endosome transport","cluster_id":"2","cluster_name":"Protein Transport & Localization"}],"CC":[{"id":"GO:0005829","name":"cytosol","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

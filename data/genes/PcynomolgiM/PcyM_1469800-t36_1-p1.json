@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0042147","name":"retrograde transport, endosome to Golgi"}],"CC":[{"id":"GO:0000938","name":"GARP complex"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0042147","name":"retrograde transport, endosome to Golgi","cluster_id":"2","cluster_name":"Protein Transport & Localization"}],"CC":[{"id":"GO:0000938","name":"GARP complex","cluster_id":"3","cluster_name":"Ribosomal, Proteasomal & Vesicle-Coat Complexes"}]},"pfp_predictions":{}}

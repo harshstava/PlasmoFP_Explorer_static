@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0003677","name":"DNA binding"},{"id":"GO:0003721","name":"telomerase activity"},{"id":"GO:0003964","name":"RNA-directed DNA polymerase activity"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0003677","name":"DNA binding","cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"},{"id":"GO:0003721","name":"telomerase activity"},{"id":"GO:0003964","name":"RNA-directed DNA polymerase activity","cluster_id":"4","cluster_name":"Kinases & Transferases"}]},"pfp_predictions":{}}

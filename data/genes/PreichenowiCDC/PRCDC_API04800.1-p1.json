@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0016226","name":"iron-sulfur cluster assembly"}],"CC":[{"id":"GO:0020011","name":"apicoplast"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0016226","name":"iron-sulfur cluster assembly","cluster_id":"5","cluster_name":"Cellular Organization, Assembly & Stress Response"}],"CC":[{"id":"GO:0020011","name":"apicoplast","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

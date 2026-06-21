@@ -59,30 +59,30 @@ body {
 
 .accent { color: var(--accent); }
 
-.tagline {
-  margin: 0.15rem 0 0;
+.about {
+  margin-top: 1rem;
   font-size: 0.85rem;
   color: var(--ink-soft);
+  max-width: 760px;
 }
 
-.species-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 1rem;
+.about p { margin: 0 0 0.6rem; }
+
+.about ul {
+  margin: 0 0 0.6rem;
+  padding-left: 1.2rem;
 }
 
-.species-chip {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--ink-soft);
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.2rem 0.6rem;
-}
+.about li { margin-bottom: 0.15rem; }
 
-.species-chip b { color: var(--ink); font-weight: 600; }
+.about strong { color: var(--ink); }
+
+.about a { color: var(--accent-deep); }
+
+.about .authors {
+  font-size: 0.8rem;
+  font-style: italic;
+}
 
 .layout {
   max-width: 1100px;
@@ -282,12 +282,40 @@ table.pred-table td.go-id, table.pred-table td.score {
   margin-top: 0.5rem;
 }
 
-.footer {
-  max-width: 1100px;
-  margin: 0 auto 2.5rem;
-  padding: 0 1.5rem;
-  color: var(--ink-soft);
-  font-size: 0.78rem;
-  border-top: 1px solid var(--border);
-  padding-top: 1rem;
+.cluster-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  color: var(--cluster-color);
+  border: 1px solid var(--cluster-color);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
 }
+
+.cluster-chart {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cluster-chart svg { flex-shrink: 0; }
+
+.cluster-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+}
+

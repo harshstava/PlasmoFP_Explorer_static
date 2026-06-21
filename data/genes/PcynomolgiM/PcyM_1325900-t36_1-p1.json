@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0006457","name":"protein folding"},{"id":"GO:0015031","name":"protein transport"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0006457","name":"protein folding","cluster_id":"5","cluster_name":"Cellular Organization, Assembly & Stress Response"},{"id":"GO:0015031","name":"protein transport","cluster_id":"2","cluster_name":"Protein Transport & Localization"}]},"pfp_predictions":{}}

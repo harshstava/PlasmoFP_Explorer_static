@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0008289","name":"lipid binding"}],"CC":[{"id":"GO:0020008","name":"rhoptry"},{"id":"GO:0033016","name":"rhoptry membrane"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0008289","name":"lipid binding","cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"}],"CC":[{"id":"GO:0020008","name":"rhoptry","cluster_id":"1","cluster_name":"Membrane & Organelle"},{"id":"GO:0033016","name":"rhoptry membrane","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

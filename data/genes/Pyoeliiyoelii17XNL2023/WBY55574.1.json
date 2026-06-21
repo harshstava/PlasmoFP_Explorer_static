@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0007162","name":"negative regulation of cell adhesion"}],"CC":[{"id":"GO:0005886","name":"plasma membrane"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0007162","name":"negative regulation of cell adhesion","cluster_id":"0","cluster_name":"Regulation of Biological Processes"}],"CC":[{"id":"GO:0005886","name":"plasma membrane","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

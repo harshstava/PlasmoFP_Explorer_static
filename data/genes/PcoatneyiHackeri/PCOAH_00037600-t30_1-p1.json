@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0016573","name":"histone acetylation"}],"CC":[{"id":"GO:0000123","name":"histone acetyltransferase complex"},{"id":"GO:0005634","name":"nucleus"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0016573","name":"histone acetylation"}],"CC":[{"id":"GO:0000123","name":"histone acetyltransferase complex","cluster_id":"0","cluster_name":"Catalytic & Enzymatic Complexes"},{"id":"GO:0005634","name":"nucleus","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

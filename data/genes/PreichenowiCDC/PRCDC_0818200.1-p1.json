@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0005524","name":"ATP binding"}],"CC":[{"id":"GO:0005829","name":"cytosol"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0005524","name":"ATP binding","cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"}],"CC":[{"id":"GO:0005829","name":"cytosol","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

@@ -1,1 +1,1 @@
-{"original_annotations":{},"pfp_predictions":{"MF":{"0.3":[{"id":"GO:0005488","name":"binding","score":0.013188}]}}}
+{"original_annotations":{},"pfp_predictions":{"MF":{"0.3":[{"id":"GO:0005488","name":"binding","score":0.013188,"cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"}]}}}

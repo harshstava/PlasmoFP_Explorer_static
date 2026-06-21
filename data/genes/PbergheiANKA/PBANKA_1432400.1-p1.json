@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0022829","name":"wide pore channel activity"}],"CC":[{"id":"GO:0016020","name":"membrane"},{"id":"GO:0031982","name":"vesicle"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0022829","name":"wide pore channel activity","cluster_id":"6","cluster_name":"Transporter & Channel Activity"}],"CC":[{"id":"GO:0016020","name":"membrane","cluster_id":"1","cluster_name":"Membrane & Organelle"},{"id":"GO:0031982","name":"vesicle","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

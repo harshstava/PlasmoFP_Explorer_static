@@ -1,1 +1,1 @@
-{"original_annotations":{"BP":[{"id":"GO:0044255","name":"cellular lipid metabolic process"}],"CC":[{"id":"GO:0020020","name":"food vacuole"}]},"pfp_predictions":{}}
+{"original_annotations":{"BP":[{"id":"GO:0044255","name":"cellular lipid metabolic process","cluster_id":"3","cluster_name":"Small Molecule & Cofactor Metabolism"}],"CC":[{"id":"GO:0020020","name":"food vacuole","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}

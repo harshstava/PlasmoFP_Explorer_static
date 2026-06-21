@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding"},{"id":"GO:0016746","name":"acyltransferase activity"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding","cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"},{"id":"GO:0016746","name":"acyltransferase activity","cluster_id":"1","cluster_name":"Acyl/Acetyl/Methyltransferase Activity"}]},"pfp_predictions":{}}

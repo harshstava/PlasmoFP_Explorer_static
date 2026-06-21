@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding"}]},"pfp_predictions":{"CC":{"0.3":[{"id":"GO:0005737","name":"cytoplasm","score":0.331552}]}}}
+{"original_annotations":{"MF":[{"id":"GO:0005515","name":"protein binding","cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"}]},"pfp_predictions":{"CC":{"0.3":[{"id":"GO:0005737","name":"cytoplasm","score":0.331552,"cluster_id":"1","cluster_name":"Membrane & Organelle"}]}}}

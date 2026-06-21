@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0003714","name":"transcription corepressor activity"}],"BP":[{"id":"GO:0045892","name":"negative regulation of DNA-templated transcription"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0003714","name":"transcription corepressor activity","cluster_id":"0","cluster_name":"Transcription Regulator & Modulator Activity"}],"BP":[{"id":"GO:0045892","name":"negative regulation of DNA-templated transcription","cluster_id":"0","cluster_name":"Regulation of Biological Processes"}]},"pfp_predictions":{}}

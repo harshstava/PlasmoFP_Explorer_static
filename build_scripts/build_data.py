@@ -11,6 +11,7 @@ Input:  ../../PlasmoFP_Explorer/  (the original repo's data files)
 Output: ../data/                  (sharded static data, served as-is)
 """
 
+import csv
 import json
 import re
 from pathlib import Path
@@ -51,6 +52,31 @@ def safe_filename(s: str) -> str:
 def load_json(name):
     with open(SRC / name) as f:
         return json.load(f)
+
+
+CLUSTER_FILES = {
+    "MF": "MF_term_clusters.tsv",
+    "BP": "BP_term_clusters.tsv",
+    "CC": "CC_term_clusters.tsv",
+}
+
+
+def load_cluster_mappings():
+    """Mirrors plasmoFP_explorer_simple.py's load_cluster_mappings(): one
+    GO_ID -> {cluster_id, cluster_name} map per aspect, from the lab's
+    functional clustering TSVs."""
+    mappings = {}
+    for aspect, filename in CLUSTER_FILES.items():
+        aspect_map = {}
+        with open(SRC / filename) as f:
+            for row in csv.DictReader(f, delimiter="\t"):
+                aspect_map[row["GO_ID"]] = {
+                    "cluster_id": row["ClusterID"],
+                    "cluster_name": row["ClusterName"],
+                }
+        mappings[aspect] = aspect_map
+        print(f"Loaded {len(aspect_map)} cluster mappings for {aspect} from {filename}.")
+    return mappings
 
 
 def parse_obo_fallback_names(go_terms):
@@ -142,7 +168,15 @@ def resolve_name(go_id, go_name, go_terms, obo_fallback):
     return go_name
 
 
-def build_genes(go_terms, obo_fallback):
+def attach_cluster(entry, aspect, cluster_mappings):
+    info = cluster_mappings.get(aspect, {}).get(entry["id"])
+    if info:
+        entry["cluster_id"] = info["cluster_id"]
+        entry["cluster_name"] = info["cluster_name"]
+    return entry
+
+
+def build_genes(go_terms, obo_fallback, cluster_mappings):
     print("Loading optimized_gene_index.json ...")
     genes = load_json("optimized_gene_index.json")
     print("Loading protein_descriptions.json ...")
@@ -174,7 +208,9 @@ def build_genes(go_terms, obo_fallback):
                 name = resolve_name(a["id"], a["name"], go_terms, obo_fallback)
                 if name != a["name"]:
                     resolved_count += 1
-                fixed.append({"id": a["id"], "name": name})
+                entry = {"id": a["id"], "name": name}
+                attach_cluster(entry, aspect, cluster_mappings)
+                fixed.append(entry)
             original_annotations[aspect] = fixed
 
         pfp_predictions = {}
@@ -186,7 +222,9 @@ def build_genes(go_terms, obo_fallback):
                     name = resolve_name(p["id"], p["name"], go_terms, obo_fallback)
                     if name != p["name"]:
                         resolved_count += 1
-                    fixed.append({"id": p["id"], "name": name, "score": p["score"]})
+                    entry = {"id": p["id"], "name": name, "score": p["score"]}
+                    attach_cluster(entry, aspect, cluster_mappings)
+                    fixed.append(entry)
                 fixed_by_fdr[fdr] = fixed
             pfp_predictions[aspect] = fixed_by_fdr
 
@@ -265,7 +303,8 @@ if __name__ == "__main__":
     print("Loading go_terms.json (shared name-resolution lookup) ...")
     go_terms = load_json("go_terms.json")
     obo_fallback = parse_obo_fallback_names(go_terms)
-    build_genes(go_terms, obo_fallback)
+    cluster_mappings = load_cluster_mappings()
+    build_genes(go_terms, obo_fallback, cluster_mappings)
     build_go_terms(go_terms, obo_fallback)
     report_sizes()
     print("\nDone.")

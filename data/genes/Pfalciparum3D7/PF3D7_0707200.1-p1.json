@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0070577","name":"lysine-acetylated histone binding"}],"CC":[{"id":"GO:0036396","name":"RNA N6-methyladenosine methyltransferase complex"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0070577","name":"lysine-acetylated histone binding","cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"}],"CC":[{"id":"GO:0036396","name":"RNA N6-methyladenosine methyltransferase complex","cluster_id":"0","cluster_name":"Catalytic & Enzymatic Complexes"}]},"pfp_predictions":{}}

@@ -1,1 +1,1 @@
-{"original_annotations":{"MF":[{"id":"GO:0035650","name":"AP-1 adaptor complex binding"}],"CC":[{"id":"GO:0005802","name":"trans-Golgi network"}]},"pfp_predictions":{}}
+{"original_annotations":{"MF":[{"id":"GO:0035650","name":"AP-1 adaptor complex binding","cluster_id":"2","cluster_name":"DNA/RNA Binding & Polymerase Activity"}],"CC":[{"id":"GO:0005802","name":"trans-Golgi network","cluster_id":"1","cluster_name":"Membrane & Organelle"}]},"pfp_predictions":{}}
