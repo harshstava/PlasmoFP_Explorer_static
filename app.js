@@ -95,17 +95,17 @@ async function openGene(geneId, species, focusGoId) {
   renderGeneDetail(geneId, species, data, ms, focusGoId);
 }
 
-// Given a GO id, find the aspect it belongs to and the tightest (smallest)
+// Given a GO id, find the subontology it belongs to and the tightest (smallest)
 // eFDR threshold whose prediction bucket already includes it — so opening a
 // gene from that term's search result shows it without the user having to
 // loosen the threshold themselves.
 function findFdrForGoTerm(pfpPredictions, goId) {
   if (!goId) return null;
-  for (const aspect in pfpPredictions) {
-    const thresholds = Object.keys(pfpPredictions[aspect]).sort((a, b) => parseFloat(a) - parseFloat(b));
+  for (const subontology in pfpPredictions) {
+    const thresholds = Object.keys(pfpPredictions[subontology]).sort((a, b) => parseFloat(a) - parseFloat(b));
     for (const fdr of thresholds) {
-      if ((pfpPredictions[aspect][fdr] || []).some(p => p.id === goId)) {
-        return { aspect, fdr };
+      if ((pfpPredictions[subontology][fdr] || []).some(p => p.id === goId)) {
+        return { subontology, fdr };
       }
     }
   }
@@ -119,8 +119,9 @@ function scoreBar(score) {
 
 // ---------- Functional clustering ----------
 
-// Stable color per cluster ID, independent of aspect — same cluster id always
-// gets the same color so repeat viewing across aspects/genes stays legible.
+// Stable color per cluster ID, independent of subontology — same cluster id
+// always gets the same color so repeat viewing across subontologies/genes
+// stays legible.
 const CLUSTER_COLORS = [
   "#b8841a", "#5b8a72", "#5e7ea8", "#a85e7e", "#8f6512",
   "#6b9e4f", "#9e5b4f", "#6b6457",
@@ -182,7 +183,6 @@ function renderClusterChart(predictions) {
 
 function renderPredictionTable(predictionsByFdr, preferredFdr) {
   const thresholds = Object.keys(predictionsByFdr).sort((a, b) => parseFloat(a) - parseFloat(b));
-  if (!thresholds.length) return `<p class="muted-note">No PlasmoFP predictions for this aspect.</p>`;
 
   const selectId = `fdr-${Math.random().toString(36).slice(2)}`;
   const renderRows = (fdr) => (predictionsByFdr[fdr] || []).map(p => `
@@ -200,13 +200,14 @@ function renderPredictionTable(predictionsByFdr, preferredFdr) {
   setTimeout(() => {
     const sel = document.getElementById(selectId);
     if (sel) sel.addEventListener("change", () => {
-      const block = sel.closest(".aspect-block");
+      const block = sel.closest(".subontology-block");
       block.querySelector("tbody").innerHTML = renderRows(sel.value);
       block.querySelector(".cluster-chart-wrap").innerHTML = renderClusterChart(predictionsByFdr[sel.value] || []);
     });
   }, 0);
 
   return `
+    <p class="subontology-title" style="margin-top:0.6rem;"><span class="brand-name">PlasmoFP</span> predictions</p>
     <label class="muted-note" for="${selectId}">eFDR threshold</label><br>
     <select id="${selectId}" class="fdr-select">
       ${thresholds.map(f => `<option value="${f}" ${f === defaultFdr ? "selected" : ""}>≤ ${f}</option>`).join("")}
@@ -215,22 +216,50 @@ function renderPredictionTable(predictionsByFdr, preferredFdr) {
       <thead><tr><th>GO ID</th><th>Name</th><th>Cluster</th><th>Score</th></tr></thead>
       <tbody>${renderRows(defaultFdr)}</tbody>
     </table>
-    <p class="aspect-title" style="margin-top:0.8rem;">Functional cluster distribution</p>
+    <p class="subontology-title" style="margin-top:0.8rem;">Functional cluster distribution</p>
     <div class="cluster-chart-wrap">${renderClusterChart(predictionsByFdr[defaultFdr] || [])}</div>
   `;
 }
 
 function renderOriginalAnnotations(annotations) {
-  if (!annotations || !annotations.length) return `<p class="muted-note">None on record.</p>`;
-  return `<ul style="margin:0;padding-left:1.1rem;font-size:0.85rem;">
-    ${annotations.map(a => `<li><span class="result-id" style="font-size:0.8rem;">${a.id}</span> — ${a.name} ${clusterLabel(a)}</li>`).join("")}
-  </ul>`;
+  return `
+    <p class="subontology-title">Original annotations</p>
+    <ul class="annotation-list">
+      ${annotations.map(a => `<li><span class="result-id" style="font-size:0.8rem;">${a.id}</span> — ${a.name} ${clusterLabel(a)}</li>`).join("")}
+    </ul>
+    <p class="subontology-title" style="margin-top:0.8rem;">Functional cluster distribution</p>
+    <div class="cluster-chart-wrap">${renderClusterChart(annotations)}</div>
+  `;
+}
+
+function renderSubontologyBlock(label, annotations, predictionsByFdr, preferredFdr) {
+  const annCount = annotations.length;
+  const predCount = Object.values(predictionsByFdr).reduce((max, list) => Math.max(max, list.length), 0);
+  const isEmpty = annCount === 0 && predCount === 0;
+
+  const summary = isEmpty
+    ? "no predictions ≤30% eFDR or original annotations"
+    : `${annCount.toLocaleString()} annotation${annCount === 1 ? "" : "s"} · ${predCount.toLocaleString()} prediction${predCount === 1 ? "" : "s"}`;
+
+  const body = isEmpty
+    ? `<p class="muted-note">No predictions ≤30% eFDR or original annotations for this subontology.</p>`
+    : `${annCount ? renderOriginalAnnotations(annotations) : ""}${predCount ? renderPredictionTable(predictionsByFdr, preferredFdr) : ""}`;
+
+  return `
+    <details class="subontology-block" ${isEmpty ? "" : "open"}>
+      <summary class="subontology-summary">
+        <span class="subontology-name">${label}</span>
+        <span class="muted-note">${summary}</span>
+      </summary>
+      <div class="subontology-body">${body}</div>
+    </details>
+  `;
 }
 
 function renderGeneDetail(geneId, species, data, ms, focusGoId) {
   const detail = document.getElementById("detail");
-  const aspects = ["MF", "BP", "CC"];
-  const aspectLabels = { MF: "Molecular function", BP: "Biological process", CC: "Cellular component" };
+  const subontologies = ["MF", "BP", "CC"];
+  const subontologyLabels = { MF: "Molecular function", BP: "Biological process", CC: "Cellular component" };
   const product = (state.genesIndex[geneId] || [])[1] || "";
   const focus = findFdrForGoTerm(data.pfp_predictions || {}, focusGoId);
 
@@ -243,14 +272,12 @@ function renderGeneDetail(geneId, species, data, ms, focusGoId) {
         </div>
         <span class="timing-badge">fetched in ${ms.toFixed(1)} ms</span>
       </div>
-      ${aspects.map(asp => `
-        <div class="aspect-block">
-          <p class="aspect-title">${aspectLabels[asp]} — original annotations</p>
-          ${renderOriginalAnnotations((data.original_annotations || {})[asp])}
-          <p class="aspect-title" style="margin-top:0.6rem;">${aspectLabels[asp]} — PlasmoFP predictions</p>
-          ${renderPredictionTable((data.pfp_predictions || {})[asp] || {}, focus && focus.aspect === asp ? focus.fdr : null)}
-        </div>
-      `).join("")}
+      ${subontologies.map(sub => renderSubontologyBlock(
+        subontologyLabels[sub],
+        (data.original_annotations || {})[sub] || [],
+        (data.pfp_predictions || {})[sub] || {},
+        focus && focus.subontology === sub ? focus.fdr : null
+      )).join("")}
     </div>
   `;
   detail.hidden = false;

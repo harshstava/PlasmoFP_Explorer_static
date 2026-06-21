@@ -200,9 +200,44 @@ body {
   white-space: nowrap;
 }
 
-.aspect-block { margin-bottom: 1rem; }
+.subontology-block {
+  border-top: 1px solid var(--border);
+  padding: 0.7rem 0;
+}
 
-.aspect-title {
+.subontology-block:first-of-type { border-top: none; padding-top: 0; }
+
+.subontology-summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.subontology-summary::-webkit-details-marker { display: none; }
+
+.subontology-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.subontology-name::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: var(--ink-soft);
+  transition: transform 0.15s ease;
+}
+
+.subontology-block[open] > .subontology-summary .subontology-name::before {
+  transform: rotate(90deg);
+}
+
+.subontology-body { margin-top: 0.7rem; }
+
+.subontology-title {
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -210,6 +245,8 @@ body {
   color: var(--ink-soft);
   margin: 0 0 0.4rem;
 }
+
+.brand-name { text-transform: none; }
 
 .fdr-select {
   font-family: var(--mono);
@@ -264,6 +301,19 @@ table.pred-table td.go-id, table.pred-table td.score {
   margin-top: 0.5rem;
 }
 
+.annotation-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.85rem;
+}
+
+.annotation-list li {
+  margin-bottom: 0.55rem;
+  line-height: 1.9;
+}
+
+.annotation-list li:last-child { margin-bottom: 0; }
+
 .cluster-tag {
   display: inline-block;
   font-size: 0.75rem;
@@ -271,7 +321,8 @@ table.pred-table td.go-id, table.pred-table td.score {
   color: var(--cluster-color);
   border: 1px solid var(--cluster-color);
   border-radius: 999px;
-  padding: 0.1rem 0.55rem;
+  padding: 0.25rem 1rem;
+  margin-left: 0.3rem;
 }
 
 .cluster-chart {
