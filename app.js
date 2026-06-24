@@ -95,26 +95,27 @@ async function openGene(geneId, species, focusGoId) {
   renderGeneDetail(geneId, species, data, ms, focusGoId);
 }
 
-// Given a GO id, find the subontology it belongs to and the tightest (smallest)
-// eFDR threshold whose prediction bucket already includes it — so opening a
-// gene from that term's search result shows it without the user having to
-// loosen the threshold themselves.
-function findFdrForGoTerm(pfpPredictions, goId) {
-  if (!goId) return null;
-  for (const subontology in pfpPredictions) {
-    const thresholds = Object.keys(pfpPredictions[subontology]).sort((a, b) => parseFloat(a) - parseFloat(b));
-    for (const fdr of thresholds) {
-      if ((pfpPredictions[subontology][fdr] || []).some(p => p.id === goId)) {
-        return { subontology, fdr };
-      }
+// predictionsByFdr's buckets are cumulative supersets (the 0.3 bucket already
+// contains everything in 0.2, 0.1, 0.05, 0.01) — so the full prediction list
+// for a subontology is just its largest-threshold bucket. Each term is
+// tagged with the tightest (smallest) eFDR bucket it already qualifies for.
+function unionPredictions(predictionsByFdr) {
+  const thresholds = Object.keys(predictionsByFdr).sort((a, b) => parseFloat(a) - parseFloat(b));
+  if (!thresholds.length) return [];
+
+  const tightestFdr = new Map();
+  for (const fdr of thresholds) {
+    for (const p of predictionsByFdr[fdr] || []) {
+      if (!tightestFdr.has(p.id)) tightestFdr.set(p.id, fdr);
     }
   }
-  return null;
+
+  const union = predictionsByFdr[thresholds[thresholds.length - 1]] || [];
+  return union.map(p => ({ ...p, fdr: tightestFdr.get(p.id) }));
 }
 
-function scoreBar(score) {
-  const pct = Math.max(2, Math.min(100, Math.round(score * 100)));
-  return `<span class="score-bar" style="width:${pct}px"></span>`;
+function efdrTag(fdr) {
+  return `<span class="efdr-tag">≤${Math.round(parseFloat(fdr) * 100)}%</span>`;
 }
 
 // ---------- Functional clustering ----------
@@ -181,58 +182,45 @@ function renderClusterChart(predictions) {
   `;
 }
 
-function renderPredictionTable(predictionsByFdr, preferredFdr) {
-  const thresholds = Object.keys(predictionsByFdr).sort((a, b) => parseFloat(a) - parseFloat(b));
+function renderPredictionTable(predictionsByFdr, focusGoId) {
+  const predictions = unionPredictions(predictionsByFdr);
 
-  const selectId = `fdr-${Math.random().toString(36).slice(2)}`;
-  const renderRows = (fdr) => (predictionsByFdr[fdr] || []).map(p => `
-    <tr>
+  const rows = predictions.map(p => `
+    <tr class="${p.id === focusGoId ? "highlight-row" : ""}">
       <td class="go-id">${p.id}</td>
       <td>${p.name}</td>
       <td>${clusterLabel(p)}</td>
-      <td class="score">${scoreBar(p.score)}${p.score.toFixed(4)}</td>
+      <td>${efdrTag(p.fdr)}</td>
     </tr>
   `).join("");
 
-  const defaultFdr = (preferredFdr && thresholds.includes(preferredFdr)) ? preferredFdr :
-    (thresholds.includes("0.05") ? "0.05" : thresholds[0]);
-
-  setTimeout(() => {
-    const sel = document.getElementById(selectId);
-    if (sel) sel.addEventListener("change", () => {
-      const block = sel.closest(".subontology-block");
-      block.querySelector("tbody").innerHTML = renderRows(sel.value);
-      block.querySelector(".cluster-chart-wrap").innerHTML = renderClusterChart(predictionsByFdr[sel.value] || []);
-    });
-  }, 0);
-
   return `
     <p class="subontology-title" style="margin-top:0.6rem;"><span class="brand-name">PlasmoFP</span> predictions</p>
-    <label class="muted-note" for="${selectId}">eFDR threshold</label><br>
-    <select id="${selectId}" class="fdr-select">
-      ${thresholds.map(f => `<option value="${f}" ${f === defaultFdr ? "selected" : ""}>≤ ${f}</option>`).join("")}
-    </select>
     <table class="pred-table">
-      <thead><tr><th>GO ID</th><th>Name</th><th>Cluster</th><th>Score</th></tr></thead>
-      <tbody>${renderRows(defaultFdr)}</tbody>
+      <thead><tr><th>GO ID</th><th>Name</th><th>Cluster</th><th>eFDR</th></tr></thead>
+      <tbody>${rows}</tbody>
     </table>
     <p class="subontology-title" style="margin-top:0.8rem;">Functional cluster distribution</p>
-    <div class="cluster-chart-wrap">${renderClusterChart(predictionsByFdr[defaultFdr] || [])}</div>
+    <div class="cluster-chart-wrap">${renderClusterChart(predictions)}</div>
   `;
 }
 
-function renderOriginalAnnotations(annotations) {
+function renderOriginalAnnotations(annotations, focusGoId) {
   return `
     <p class="subontology-title">Original annotations</p>
     <ul class="annotation-list">
-      ${annotations.map(a => `<li><span class="result-id" style="font-size:0.8rem;">${a.id}</span> — ${a.name} ${clusterLabel(a)}</li>`).join("")}
+      ${annotations.map(a => `
+        <li class="${a.id === focusGoId ? "highlight-row" : ""}">
+          <span class="result-id" style="font-size:0.8rem;">${a.id}</span> — ${a.name} ${clusterLabel(a)}
+        </li>
+      `).join("")}
     </ul>
     <p class="subontology-title" style="margin-top:0.8rem;">Functional cluster distribution</p>
     <div class="cluster-chart-wrap">${renderClusterChart(annotations)}</div>
   `;
 }
 
-function renderSubontologyBlock(label, annotations, predictionsByFdr, preferredFdr) {
+function renderSubontologyBlock(label, annotations, predictionsByFdr, focusGoId) {
   const annCount = annotations.length;
   const predCount = Object.values(predictionsByFdr).reduce((max, list) => Math.max(max, list.length), 0);
   const isEmpty = annCount === 0 && predCount === 0;
@@ -243,7 +231,7 @@ function renderSubontologyBlock(label, annotations, predictionsByFdr, preferredF
 
   const body = isEmpty
     ? `<p class="muted-note">No predictions ≤30% eFDR or original annotations for this subontology.</p>`
-    : `${annCount ? renderOriginalAnnotations(annotations) : ""}${predCount ? renderPredictionTable(predictionsByFdr, preferredFdr) : ""}`;
+    : `${annCount ? renderOriginalAnnotations(annotations, focusGoId) : ""}${predCount ? renderPredictionTable(predictionsByFdr, focusGoId) : ""}`;
 
   return `
     <details class="subontology-block" ${isEmpty ? "" : "open"}>
@@ -261,7 +249,6 @@ function renderGeneDetail(geneId, species, data, ms, focusGoId) {
   const subontologies = ["MF", "BP", "CC"];
   const subontologyLabels = { MF: "Molecular function", BP: "Biological process", CC: "Cellular component" };
   const product = (state.genesIndex[geneId] || [])[1] || "";
-  const focus = findFdrForGoTerm(data.pfp_predictions || {}, focusGoId);
 
   detail.innerHTML = `
     <div class="detail-card">
@@ -276,7 +263,7 @@ function renderGeneDetail(geneId, species, data, ms, focusGoId) {
         subontologyLabels[sub],
         (data.original_annotations || {})[sub] || [],
         (data.pfp_predictions || {})[sub] || {},
-        focus && focus.subontology === sub ? focus.fdr : null
+        focusGoId
       )).join("")}
     </div>
   `;

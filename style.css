@@ -248,17 +248,6 @@ body {
 
 .brand-name { text-transform: none; }
 
-.fdr-select {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid var(--border);
-  border-radius: 0.3rem;
-  margin-bottom: 0.6rem;
-  background: var(--bg);
-  color: var(--ink);
-}
-
 table.pred-table {
   width: 100%;
   border-collapse: collapse;
@@ -281,18 +270,9 @@ table.pred-table td {
   border-bottom: 1px solid var(--border);
 }
 
-table.pred-table td.go-id, table.pred-table td.score {
+table.pred-table td.go-id {
   font-family: var(--mono);
   white-space: nowrap;
-}
-
-.score-bar {
-  display: inline-block;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 3px;
-  vertical-align: middle;
-  margin-right: 0.4rem;
 }
 
 .muted-note {
@@ -324,6 +304,19 @@ table.pred-table td.go-id, table.pred-table td.score {
   padding: 0.25rem 1rem;
   margin-left: 0.3rem;
 }
+
+.efdr-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-family: var(--mono);
+  white-space: nowrap;
+  color: var(--ink-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+.highlight-row { background: var(--accent-bg); }
 
 .cluster-chart {
   display: flex;
